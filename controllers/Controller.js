@@ -6,7 +6,7 @@ class Controllers {
     return res.send(books);
   }
   async getTestData(req, res) {
-    return res.send(req.body);
+    return res.send({ ...req.body, test: 777 });
   }
 
   addTestsEntries(req, res) {
