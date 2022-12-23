@@ -3,13 +3,25 @@ const { DataTypes } = require("sequelize");
 
 const { INTEGER, STRING } = DataTypes;
 
-const Book = sequelize.define("Book", {
+const Client = sequelize.define("Client", {
   id: { type: INTEGER, primaryKey: true, autoIncrement: true },
-  title: { type: STRING, allowNull: false },
-  price: { type: STRING, allowNull: false },
-  descr: { type: STRING, allowNull: false },
-  type: { type: STRING, allowNull: false },
-  img_name: { type: STRING, allowNull: false },
+  name: { type: STRING, allowNull: false },
+  phone: { type: STRING, allowNull: false },
 });
 
-module.exports = { Book };
+const Menu = sequelize.define("Menu", {
+  id: { type: INTEGER, primaryKey: true, autoIncrement: true },
+  img: { type: STRING, allowNull: false },
+  altimg: { type: STRING, allowNull: false },
+  title: { type: STRING, allowNull: false },
+  descr: { type: STRING, allowNull: false },
+  price: { type: INTEGER, allowNull: false },
+});
+
+const Slide = sequelize.define("Slide", {
+  id: { type: INTEGER, primaryKey: true, autoIncrement: true },
+  img: { type: STRING, allowNull: false },
+  altimg: { type: STRING, allowNull: false },
+});
+
+module.exports = { Client, Menu, Slide };

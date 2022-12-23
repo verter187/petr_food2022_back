@@ -1,13 +1,17 @@
 const router = new require("express")();
 
 const {
-  getBooks,
-  getTestData,
+  getMenus,
+  getSlides,
+  getClients,
+  postClient,
   addTestsEntries,
 } = require("../controllers/Controller");
 
-router.get("/books", getBooks);
-router.post("/test", getTestData);
+router.get("/menus", getMenus);
+router.get("/slides", getSlides);
+router.get("/clients", getClients);
+router.post("/client", postClient);
 
 router.get("/addTestsEntries", addTestsEntries);
 
